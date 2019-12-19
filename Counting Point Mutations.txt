@@ -1,0 +1,20 @@
+
+
+def Hamming():
+#puts the two lines of DNA from the txt and puts it into a list
+    DNAlist = []
+    with open('potato.txt','r') as hamm:
+        for lines in hamm:
+            DNAlist.append(lines.rstrip('\n'))
+        print(DNAlist)
+#assigning each DNA sequence to a variable
+    seq1 = DNAlist[0]
+    seq2 = DNAlist[1]
+    hamming_distance = 0
+    i = 0
+    for basepairs in seq1:
+        i+=1
+        if seq1[i-1] != seq2[i-1]:
+            hamming_distance+=1
+#returns the number of corresponding DNA pairs that are NOT the same between the two strands
+    print(hamming_distance)
