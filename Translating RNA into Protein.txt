@@ -1,0 +1,38 @@
+
+def RNAtoProtein():
+    from textwrap import wrap
+    TriList= []
+    DNAstrand = ''
+    with open('potato.txt', 'r') as f:
+        for lines in f:
+            DNAstrand+=lines
+    #taking strand from text file and making it equal a variable, DNAstrand  
+        
+    TriList = wrap(DNAstrand,3)
+    
+    #wrap will take the string, DNAstrand, and split it into a list at every 3 characters
+        
+        
+    protein = '' 
+    k = 0
+    dict1 = {'UUU' : 'F', 'UUC' : 'F', 'UUA' : 'L', 'UUG' : 'L', 'UCU' : 'S', 'UCC' : 'S', 'UCA' : 'S', 'UCG' : 'S',
+         'UAU' : 'Y', 'UAC' : 'Y', 'UAA' : 'Stop', 'UAG' : 'Stop', 'UGU' : 'C', 'UGC' : 'C', 'UGA' : 'Stop',
+         'UGG' : 'W', 'CUU' : 'L', 'CUC' : 'L', 'CUA' : 'L', 'CUG' : 'L', 'CCU' : 'P', 'CCC' : 'P', 'CCA' : 'P',
+         'CCG' : 'P', 'CAU' : 'H', 'CAC' : 'H', 'CAA' : 'Q', 'CAG' : 'Q', 'CGU' : 'R', 'CGC' : 'R', 'CGA' : 'R', 
+         'CGG' : 'R', 'AUU' : 'I', 'AUC' : 'I', 'AUA' : 'I', 'AUG' : 'M', 'ACU' : 'T', 'ACC' : 'T', 'ACA' : 'T',
+         'ACG' : 'T', 'AAU' : 'N', 'AAC' : 'N', 'AAA' : 'K', 'AAG' : 'K', 'AGU' : 'S', 'AGC' : 'S', 'AGA' : 'R',
+         'AGG' : 'R', 'GUU' : 'V', 'GUC' : 'V', 'GUA' : 'V', 'GUG' : 'V', 'GCU' : 'A', 'GCC' : 'A', 'GCA' : 'A',
+         'GCG' : 'A', 'GAU' : 'D', 'GAC' : 'D', 'GAA' : 'E', 'GAG' : 'E', 'GGU' : 'G', 'GGC' : 'G', 'GGA' : 'G',
+         'GGG' : 'G'}
+    #a dictionary that gives the one letter translation to the trinucleotide sequence
+    
+    for trinucleotides in DNAstrand:
+        if (dict1[TriList[k]]) == 'Stop':
+            break
+        protein +=(dict1[TriList[k]]) 
+        k+=1
+    #Each three letter sequence in 'TriList' is being converted to its corresponding amino acid letter
+    #k is the nth index in 'TriList', so the code is running through each 3 letter sequence, determined by the value of k and 
+    #converting it to its corresponding one letter amino acid and additing the string to the variable,  'protein'
+        
+    print(protein)
