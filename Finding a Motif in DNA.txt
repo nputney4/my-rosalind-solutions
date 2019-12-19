@@ -1,0 +1,21 @@
+def Find_Motif():
+    slist = [] 
+    with open('potato.txt', 'r') as f:
+        for lines in f:
+            slist.append(lines)
+	#separates first and second line of text file into a list
+
+    s = slist[0]
+    subset = slist[1]
+	#separates the list into indvidual strings, 's' being the entire sequence and 'subset' being the motif
+
+    i = 0
+    motif = ''
+
+    for char in s:
+        if char == subset[0] and s[i:len(subset) + i] == subset:
+	#tests if the subset is equal to the corresponding base pairs in 's'
+            motif += str(i+1) + ' '
+        i+=1
+	
+    print(motif)
