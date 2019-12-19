@@ -1,0 +1,105 @@
+#3 Rosalind - 
+def big_CG():
+    perc = []
+    list1 = []
+    file = open("potato.txt", "r")
+    output="".join(line.rstrip("\n") for line in file)
+    list1 = (output.split(">")[1:])
+    file.close
+    for word in list1:
+        CG = 0
+        totalbase = 0
+        for char in word:
+            if char == 'A' or char == 'C' or char == 'G' or char =='T':
+                totalbase +=1
+            if char == 'C':
+                CG +=1
+            if char == 'G':
+                CG+=1
+        perc.append(CG/totalbase*100)
+        
+            
+
+    a = ['test', 0]
+    b = ['test', 0]
+    c = ['test', 0]
+    d = ['test', 0]
+    e = ['test', 0]
+    f = ['test', 0]
+    g = ['test', 0]
+    h = ['test', 0]
+    i = ['test', 0]
+    j = ['test', 0]
+    
+    for s in range(0,len(list1)):
+        if s == 0:
+            words0 = list1[0]
+        if s == 1:
+            words1 = list1[1]
+        if s == 2:
+            words2 = list1[2]
+        if s == 3:
+            words3 = list1[3]
+        if s == 4:
+            words4 = list1[4]
+        if s == 5:
+            words5 = list1[5]
+        if s == 6:
+            words6 = list1[6]
+        if s == 7:
+            words7 = list1[7]
+        if s == 8:
+            words8 = list1[8]
+        if s == 9:
+            words9 = list1[9]
+        if s == 10:
+            words10 = list1[10]
+            
+    
+    for num in range(0,len(list1)):
+        if num == 0:
+            a = words0[0:13], perc[num]
+        if num == 1:
+            b = words1[0:13], perc[num]
+        if num == 2:
+            c = words2[0:13], perc[num]
+        if num == 3:
+            d = words3[0:13], perc[num]
+        if num == 4:
+            e = words4[0:13], perc[num]
+        if num == 5:
+            f = words5[0:13], perc[num]
+        if num == 6:
+            g = words6[0:13], perc[num]
+        if i == 7:
+            h = words7[0:13], perc[num]
+        if num == 8:
+            i = words8[0:13], perc[num]
+        if num == 9:
+            j = words9[0:13], perc[num]
+      
+    
+    q = max(a[1],b[1],c[1], d[1], e[1], f[1], g[1], h[1], i[1])
+
+    if q == a[1]:
+        print(a)
+    if q == b[1]:
+        print(b)
+    if q == c[1]:
+        print(c)
+    if q == d[1]:
+        print(d)
+    if q == e[1]:
+        print(e)
+    if q == f[1]:
+        print(f)
+    if q == g[1]:
+        print(g)
+    if q == h[1]:
+        print(h)
+    if q == i[1]:
+        print(i)
+    if q == j[1]:
+        print(j)
+    
+big_CG()     
